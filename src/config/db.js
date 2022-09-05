@@ -8,4 +8,13 @@ host: process.env.PGHOST,
 port: process.env.PGPORT
 });
 
-module.exports = pool;
+const db = async () => {
+    try {
+    return pool
+    } catch (error) {
+    pool.end()
+    console.log(error)
+    }
+    }
+module.exports = db;
+

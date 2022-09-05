@@ -7,16 +7,15 @@ const CON_getUser = ({ getUser }) =>{
 
         try {
             //get the httprequest body
-            const { source = {}, ...info} = httpRequest.body;
+            const { source = {}, } = httpRequest.body;
             source.ip = httpRequest.ip;
             source.browser = httpRequest.headers["User-Agent"];
             if (httpRequest.headers["Referer"]) {
               source.referrer = httpRequest.headers["Referer"];
             }
-            const toView = {
-              ...info,
-              source,
-            };
+
+            // const accountId = req.params.id
+   
            
             const view = await getUser();
            
