@@ -1,6 +1,6 @@
-const UCgetuser = ({ userDb }) => {
+const UC_getuser = ({ userDb }) => {
     return async function getUser() {
         return userDb.getUser();
     }
 }
-module.exports = UCgetuser;
+module.exports = UC_getuser;
